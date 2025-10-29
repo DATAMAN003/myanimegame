@@ -247,7 +247,7 @@ Kiro transformed the development of **Anime Faction Blitz** from a potentially o
 
 This project demonstrates that AI-assisted development isn't just about code generation—it's about having an intelligent partner that understands your goals, constraints, and creative vision.
 
-**Repository**: [Your GitHub URL will go here]
+**Repository**: https://github.com/DATAMAN003/myanimegame
 **Live Demo**: https://www.reddit.com/r/myanimegame_dev/?playtest=myanimegame
 
 ---

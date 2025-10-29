@@ -1,0 +1,194 @@
+@import 'tailwindcss';
+
+/* Custom styles for Anime Faction Blitz */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Responsive design utilities */
+@media (max-width: 640px) {
+  .mobile-text-sm { font-size: 0.875rem; }
+  .mobile-text-base { font-size: 1rem; }
+  .mobile-text-lg { font-size: 1.125rem; }
+  .mobile-text-xl { font-size: 1.25rem; }
+  .mobile-text-2xl { font-size: 1.5rem; }
+  .mobile-text-3xl { font-size: 1.875rem; }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.6); }
+}
+
+@keyframes swordSlash {
+  0% { transform: translateX(-100%) rotate(-45deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%) rotate(-45deg); opacity: 0; }
+}
+
+@keyframes energyBurst {
+  0% { transform: scale(0) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+  100% { transform: scale(2) rotate(360deg); opacity: 0; }
+}
+
+@keyframes powerAura {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 165, 0, 0.3);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 165, 0, 0.5);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes battlePulse {
+  0%, 100% { 
+    background-position: 0% 50%;
+    filter: brightness(1);
+  }
+  50% { 
+    background-position: 100% 50%;
+    filter: brightness(1.2);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-sword-slash {
+  animation: swordSlash 1.5s ease-in-out infinite;
+}
+
+.animate-energy-burst {
+  animation: energyBurst 2s ease-in-out infinite;
+}
+
+.animate-power-aura {
+  animation: powerAura 3s ease-in-out infinite;
+}
+
+.animate-battle-pulse {
+  animation: battlePulse 4s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+/* Gradient text utilities */
+.gradient-text-anime {
+  background: linear-gradient(45deg, #ff6b35, #f7931e, #ffd23f, #06ffa5, #118ab2);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff6b35, #118ab2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #f7931e, #06ffa5);
+}
+
+/* Button hover effects */
+.btn-anime {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-anime::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-anime:hover::before {
+  left: 100%;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 768px) {
+  .challenge-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .faction-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .leaderboard-podium {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .challenge-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .faction-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Aspect ratio utilities for different screen sizes */
+.aspect-game {
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 640px) {
+  .aspect-game {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Touch-friendly button sizes */
+@media (max-width: 640px) {
+  .touch-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
